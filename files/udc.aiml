@@ -1,7 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
+    
   <category>
     <pattern>*</pattern>
-    <template>I have no answer for that.</template>
+    <template>Sorry, you may have to be more specific</template>
   </category>
+  
+  <category>
+    <pattern>HELLO</pattern>
+    <template>
+        <random>
+            <li>Hello user! </li>
+            <li>Hi user! </li>
+            <li>Greetings user! </li>
+        </random>
+          My name is CareerBot and I am here to assist you in finding a career
+         path in Computer Science. Say "I am ready" or "My name is *" when you 
+         are ready for assistance.
+         </template>
+  </category>
+  
+  <category>
+    <pattern>HELLO ^</pattern>
+    <template>
+        <random>
+            <li>Hello user! </li>
+            <li>Hi user! </li>
+            <li>Greetings user! </li>
+        </random>
+          My name is CareerBot and I am here to assist you in finding a career
+         path in Computer Science. Say "I am ready" or "My name is *" when you 
+         are ready for assistance.
+         </template>
+  </category>
+  
+  <category>
+    <pattern>HI</pattern>
+    <template>
+        <random>
+            <li>Hello user! </li>
+            <li>Hi user! </li>
+            <li>Greetings user! </li>
+        </random>
+          My name is CareerBot and I am here to assist you in finding a career
+         path in Computer Science. Say "I am ready" or "My name is *" when you 
+         are ready for assistance.
+         </template>
+  </category>
+  
+  <category>
+    <pattern>HI ^</pattern>
+    <template>
+        <random>
+            <li>Hello user! </li>
+            <li>Hi user! </li>
+            <li>Greetings user! </li>
+        </random>
+         My name is CareerBot and I am here to assist you in finding a career
+         path in Computer Science. Say "I am ready" or "My name is *" when you 
+         are ready for assistance.
+        </template>
+  </category>
+  
+  <category>
+    <pattern>MY NAME IS ^</pattern>
+    <template>Hello <set name = "firstname"></set><star/>. Are you ready to
+    find out what career in Computer Science you should pursue?
+    <reply>
+        <text>Sure!</text>
+        <postback>CHOOSEYES</postback>
+    </reply>
+    <reply>
+        <text>No...</text>
+        <postback>CHOOSENO</postback>
+    </reply>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>IM CALLED *</pattern>
+    <template>Hello <set name = "firstname"></set><star/>. Are you ready to
+    find out what career in Computer Science you should pursue?
+    <reply>
+        <text>Sure!</text>
+        <postback>CHOOSEYES</postback>
+    </reply>
+    <reply>
+        <text>No...</text>
+        <postback>CHOOSENO</postback>
+    </reply>
+    
+    </template>
+  </category>
+  
+  <category>
+    <pattern>I'M CALLED *</pattern>
+    <template>Hello <set name = "firstname"></set><star/>. Are you ready to
+    find out what career in Computer Science you should pursue?
+    <reply>
+        <text>Sure!</text>
+        <postback>CHOOSEYES</postback>
+    </reply>
+    <reply>
+        <text>No...</text>
+        <postback>CHOOSENO</postback>
+    </reply>
+    
+    </template>
+  </category>
+  
+  <category>
+    <pattern>IM READY</pattern>
+    <template>
+        <reply>
+            <text>Ready?</text>
+            <postback>CHOOSEYES</postback>
+        </reply>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>I AM READY</pattern>
+    <template>
+        <reply>
+            <text>Ready?</text>
+            <postback>CHOOSEYES</postback>
+        </reply>
+    </template>
+  </category>
+  
+  <category>
+      <pattern>CHOOSEYES</pattern>
+      <template>
+          Alright! So first off do you like to write code or analyze code?
+          <reply>
+              <text>Write code!</text>
+              <postback>WRITECODE</postback>
+          </reply>
+          <reply>
+              <text>Analyze code!</text>
+              <postback>ANALYZECODE</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>WRITECODE</pattern>
+      <template>
+         <random>
+            <li>Awesome! </li>
+            <li>Rad! </li>
+            <li>Cool! </li>
+        </random>
+        So, do you prefer writing Front End or Back End code?
+          <reply>
+              <text>Front End!</text>
+              <postback>FRONTEND</postback>
+          </reply>
+          <reply>
+              <text>Back End!</text>
+              <postback>BACKEND</postback>
+          </reply>
+          <reply>
+              <text>Both!</text>
+              <postback>BOTHEND</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>BACKEND</pattern>
+      <template>
+      <link>
+          <text>You may make a good Back End developer</text>
+          <url>https://www.careerexplorer.com/careers/back-end-developer/</url>
+      </link>
+      
+      Did that help? Would you like to try again?
+      <reply>
+              <text>Try Again!</text>
+              <postback>CHOOSEYES</postback>
+          </reply>
+          <reply>
+              <text>I am good.</text>
+              <postback>CHOOSEBYE</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>FRONTEND</pattern>
+      <template>
+      <link>
+          <text>You may make a good Front End developer</text>
+          <url>https://bootcamp.berkeley.edu/resources/coding/learn-web-development/what-does-a-front-end-web-developer-do/</url>
+      </link>
+      Did that help? Would you like to try again?
+      <reply>
+              <text>Try Again!</text>
+              <postback>CHOOSEYES</postback>
+          </reply>
+          <reply>
+              <text>I am good.</text>
+              <postback>CHOOSEBYE</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>BOTHEND</pattern>
+      <template>
+      <link>
+          <text>You may like Game Design</text>
+          <url>https://www.gamedesigning.org/career/game-developer/</url>
+      </link>
+      Did that help? Would you like to try again?
+      <reply>
+              <text>Try Again!</text>
+              <postback>CHOOSEYES</postback>
+          </reply>
+          <reply>
+              <text>I am good.</text>
+              <postback>CHOOSEBYE</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>ANALYZECODE</pattern>
+      <template>
+         <random>
+            <li>Awesome! </li>
+            <li>Rad! </li>
+            <li>Cool! </li>
+        </random>
+        So, are you interested in the business side of things at all?
+          <reply>
+              <text>Yes!</text>
+              <postback>DATAANALYST</postback>
+          </reply>
+          <reply>
+              <text>No!</text>
+              <postback>QUALITYASSURANCE</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>DATAANALYST</pattern>
+      <template>
+      <link>
+          <text>You may like Data Analysis</text>
+          <url>https://www.coursera.org/articles/what-does-a-data-analyst-do-a-career-guide</url>
+      </link>
+      Did that help? Would you like to try again?
+      <reply>
+              <text>Try Again!</text>
+              <postback>CHOOSEYES</postback>
+          </reply>
+          <reply>
+              <text>I am good.</text>
+              <postback>CHOOSEBYE</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>QUALITYASSURANCE</pattern>
+      <template>
+      <link>
+          <text>You may be interested in Quality Assurance</text>
+          <url>https://www.careerexplorer.com/careers/software-quality-assurance-engineer/</url>
+      </link>
+      Did that help? Would you like to try again?
+      <reply>
+              <text>Try Again!</text>
+              <postback>CHOOSEYES</postback>
+          </reply>
+          <reply>
+              <text>I am good.</text>
+              <postback>CHOOSEBYE</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>CHOOSENO</pattern>
+      <template>
+          Ok, just say "I am ready" when you want to start
+      </template>
+  </category>
+  
+  <category>
+      <pattern>CHOOSEBYE</pattern>
+      <template>
+          Glad I could be of help!
+      </template>
+  </category>
+  
 </aiml>
